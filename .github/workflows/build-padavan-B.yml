@@ -87,7 +87,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_OC=n" >> .config #CPU超频开关
         echo 'CONFIG_FIRMWARE_MT7621_OC="0x312"' >> .config #此处填写对应频率的十六进制：1000Mhz=0x312 1100Mhz=0x362 1120Mhz=0x372 1200Mhz=0x3B2
       
-        ##内网穿透服务##
+        ##私人定制##
         echo "CONFIG_FIRMWARE_INCLUDE_TTYD=y" >> .config #终端
         echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config #iperf测速
         echo "CONFIG_FIRMWARE_INCLUDE_SMBD36=y" >> .config #Share
