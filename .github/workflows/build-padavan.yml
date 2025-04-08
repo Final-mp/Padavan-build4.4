@@ -1,4 +1,4 @@
-#ÐÞ¸ÄTNAME: K2P ÖÐµÄK2PÎªÄãÐèÒª±àÒëµÄÐÍºÅ£¬×¢ÒâÃû³ÆÒªÓëconfigs/templates/Ä¿Â¼ÏÂµÄÃû×ÖÏàÍ¬
+#ä¿®æ”¹TNAME: K2P ä¸­çš„K2Pä¸ºä½ éœ€è¦ç¼–è¯‘çš„åž‹å·ï¼Œæ³¨æ„åç§°è¦ä¸Žconfigs/templates/ç›®å½•ä¸‹çš„åå­—ç›¸åŒ
 name: Build Padavan
 
 on: 
@@ -48,7 +48,7 @@ jobs:
         cp -f configs/templates/$TNAME.config .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
         ################################################################################################
-        #Òò²»Í¬ÐÍºÅÅäÖÃ¹¦ÄÜ²»Ò»Ñù£¬ËùÒÔÏÈ°ÑÅäÖÃÏîÉ¾³ý£¬Èç¹ûÄã×Ô¼ºÒªÌí¼ÓÆäËûµÄ£¬Ò²ÒªÐ´ÉÏÉ¾³ýÕâÒ»Ìõ£¬ÇÐ¼Ç£¡£¡£¡
+        #å› ä¸åŒåž‹å·é…ç½®åŠŸèƒ½ä¸ä¸€æ ·ï¼Œæ‰€ä»¥å…ˆæŠŠé…ç½®é¡¹åˆ é™¤ï¼Œå¦‚æžœä½ è‡ªå·±è¦æ·»åŠ å…¶ä»–çš„ï¼Œä¹Ÿè¦å†™ä¸Šåˆ é™¤è¿™ä¸€æ¡ï¼Œåˆ‡è®°ï¼ï¼ï¼
         ################################################################################################
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=y/CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n/g' .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_MENTOHUST=y/CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n/g' .config
@@ -56,42 +56,42 @@ jobs:
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_SRELAY=y/CONFIG_FIRMWARE_INCLUDE_SRELAY=n/g' .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=n/g' .config
         ######################################################################
-        #ÒÔÏÂÑ¡ÏîÊÇ¶¨ÒåÄãÐèÒªµÄ¹¦ÄÜ£¨y=¼¯³É,n=ºöÂÔ£©£¬ÖØÐÂÐ´Èëµ½.configÎÄ¼þ
+        #ä»¥ä¸‹é€‰é¡¹æ˜¯å®šä¹‰ä½ éœ€è¦çš„åŠŸèƒ½ï¼ˆy=é›†æˆ,n=å¿½ç•¥ï¼‰ï¼Œé‡æ–°å†™å…¥åˆ°.configæ–‡ä»¶
         ######################################################################
-        ##¿ÆÑ§ÉÏÍø##
-        echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config #¿ÆÑ§ÉÏÍø²å¼þ£¬Ñ¡ÔñnºóÈ«²¿ÓÐ¹Ø²å¼þ¶¼²»¼¯³É
-        echo "CONFIG_FIRMWARE_INCLUDE_XRAY=n" >> .config #¼¯³ÉxrayÖ´ÐÐÎÄ¼þ ~4.5M
-        echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=n" >> .config #¼¯³Év2rayÖ´ÐÐÎÄ¼þ
-        echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=y" >> .config #¼¯³ÉtrojanÖ´ÐÐÎÄ¼þ ~1.2M
-        echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=y" >> .config #simple-obfs»ìÏý²å¼þ
-        ##¿ÆÑ§ÉÏÍø##
+        ##ç§‘å­¦ä¸Šç½‘##
+        echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config #ç§‘å­¦ä¸Šç½‘æ’ä»¶ï¼Œé€‰æ‹©nåŽå…¨éƒ¨æœ‰å…³æ’ä»¶éƒ½ä¸é›†æˆ
+        echo "CONFIG_FIRMWARE_INCLUDE_XRAY=n" >> .config #é›†æˆxrayæ‰§è¡Œæ–‡ä»¶ ~4.5M
+        echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=n" >> .config #é›†æˆv2rayæ‰§è¡Œæ–‡ä»¶
+        echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=y" >> .config #é›†æˆtrojanæ‰§è¡Œæ–‡ä»¶ ~1.2M
+        echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=y" >> .config #simple-obfsæ··æ·†æ’ä»¶
+        ##ç§‘å­¦ä¸Šç½‘##
 
-        ##¹ã¸æ¹ÜÀí##
+        ##å¹¿å‘Šç®¡ç†##
         echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=y" >> .config #adbyby plus+
-        ##DNS·þÎñ##
+        ##DNSæœåŠ¡##
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=n" >> .config #smartdns
-        echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >> .config #adg DNSÈ¥AD
+        echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >> .config #adg DNSåŽ»AD
 
 
-        ##ÄÚÍø´©Í¸·þÎñ##
+        ##å†…ç½‘ç©¿é€æœåŠ¡##
         echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> .config #zerotier ~1.3M
         echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> .config #aliddns
         echo "CONFIG_FIRMWARE_INCLUDE_DDNSTO=y" >> .config #ddnsto ~0.5M
         echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=y" >> .config #wireguard ~10k
-        ##ÄÚÍø´©Í¸·þÎñ##
+        ##å†…ç½‘ç©¿é€æœåŠ¡##
         echo "CONFIG_FIRMWARE_INCLUDE_ALDRIVER=y" >> .config  #ALDRIVER  ~3m
         echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config #mentohust
         
-        ##Á÷¿ØQOS##
-        echo "CONFIG_FIRMWARE_INCLUDE_SQM=y" >> .config #SQM QOS#CPU³¬Æµ
-        echo "CONFIG_FIRMWARE_INCLUDE_OC=n" >> .config #CPU³¬Æµ¿ª¹Ø
-        echo 'CONFIG_FIRMWARE_MT7621_OC="0x312"' >> .config #´Ë´¦ÌîÐ´¶ÔÓ¦ÆµÂÊµÄÊ®Áù½øÖÆ£º1000Mhz=0x312 1100Mhz=0x362 1120Mhz=0x372 1200Mhz=0x3B2
+        ##æµæŽ§QOS##
+        echo "CONFIG_FIRMWARE_INCLUDE_SQM=y" >> .config #SQM QOS#CPUè¶…é¢‘
+        echo "CONFIG_FIRMWARE_INCLUDE_OC=n" >> .config #CPUè¶…é¢‘å¼€å…³
+        echo 'CONFIG_FIRMWARE_MT7621_OC="0x312"' >> .config #æ­¤å¤„å¡«å†™å¯¹åº”é¢‘çŽ‡çš„åå…­è¿›åˆ¶ï¼š1000Mhz=0x312 1100Mhz=0x362 1120Mhz=0x372 1200Mhz=0x3B2
 
         #########################################################################################
-        #×Ô¶¨ÒåÌí¼ÓÆäËü¹¦ÄÜÇë²Î¿¼Ô´Âëconfigs/templates/Ä¿Â¼ÏÂµÄconfigÎÄ¼þ¡£°´ÕÕÉÏÃæµÄ¸ñÊ½Ìí¼Ó¼´¿É
-        #¸ñÊ½ÈçÏÂ£º
-        #sed -i '/×Ô¶¨ÒåÏî/d' .config
-        #echo "×Ô¶¨ÒåÏî=y" >> .config
+        #è‡ªå®šä¹‰æ·»åŠ å…¶å®ƒåŠŸèƒ½è¯·å‚è€ƒæºç configs/templates/ç›®å½•ä¸‹çš„configæ–‡ä»¶ã€‚æŒ‰ç…§ä¸Šé¢çš„æ ¼å¼æ·»åŠ å³å¯
+        #æ ¼å¼å¦‚ä¸‹ï¼š
+        #sed -i '/è‡ªå®šä¹‰é¡¹/d' .config
+        #echo "è‡ªå®šä¹‰é¡¹=y" >> .config
         #########################################################################################
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
